@@ -1,0 +1,23 @@
+{
+  "name": "green-foxes-todo",
+  "version": "1.0.0",
+  "description": "This is the reddit green foxes todo web project.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/johngarcia9110/green-foxes-todo.git"
+  },
+  "author": "the green foxes",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/johngarcia9110/green-foxes-todo/issues"
+  },
+  "homepage": "https://github.com/johngarcia9110/green-foxes-todo#readme",
+  "devDependencies": {
+    "angular": "^1.5.7",
+    "foundation-sites": "^6.2.3"
+  }
+}
