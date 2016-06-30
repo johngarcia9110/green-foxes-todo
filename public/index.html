@@ -1,15 +1,38 @@
 <!DOCTYPE html>
 <html lang="en" ng-app="app">
-<head>
-	<meta charset="UTF-8">
-	<title>My App</title>
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<link rel="stylesheet" href="/css/style.css">
-	<script src="/js/main.js"></script>
-</head>
-<body>
-	<div ng-controller="MainController">
-		<h1>{{ message }}</h1>
-	</div>
-</body>
+    <head>
+        <meta charset="UTF-8">
+        <title>My App</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+        <link rel="stylesheet" href="/css/foundation.css"/>
+        <link rel="stylesheet" href="/css/style.css">
+
+        <script src="/js/main.js"></script>
+    </head>
+    <body>
+
+        <header ng-include="'header.html'"></header>
+
+        <div ng-controller="MainController">
+
+            <section class="row">
+                <h1>User's TO-DO List:</h1>
+                <div class="item large-12 columns">
+                    <div class="large-9 columns">
+                        <label ng-hide="editing">Sample Todo</label>
+                        <input ng-change="todo.edited = true" ng-blur="editing = false;" ng-show="editing" ng-model="todo.name" type="text">
+                    </div>
+                    <div class="actions large-3 columns">
+                        <a href="#" ng-click="deleteToDO(todo,$index)">Delete</a>
+                    </div><!--- .actions --->
+
+                </div><!---item--->
+                <div class="small-6 small-centered text-center columns">
+                    <a href="" ng-click="saveTodos()" class="button success large">Save All ToDo's</a>
+                </div>
+            </section>
+            
+        </div>
+    </body>
 </html>

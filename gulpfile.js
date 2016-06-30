@@ -29,10 +29,17 @@ gulp.task('sass', function(){
         .pipe(gulp.dest('public/css'))
 })
 
+gulp.task('foundation', function(){
+    gulp.src(['node_modules/foundation-sites/dist/foundation.css'])
+    .pipe(gulp.dest('public/css/'))
+})
+
 gulp.task('watch', function(){
     gulp.watch('app/**/*.js', ['browserify'])
     gulp.watch('sass/style.sass', ['sass'])
 })
 
 gulp.task('default', ['connect', 'watch'])
+
+
 
