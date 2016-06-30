@@ -17,20 +17,32 @@
         <div ng-controller="MainController">
 
             <section class="row">
+               
                 <h1>User's TO-DO List:</h1>
-                <div class="item large-12 columns">
+                
+                <div class="large-12 columns add">
+                    <div class="large-6 columns">
+                       <a href="">+ Add A New Task</a>
+                    </div>
+                    <div class="small-6 small-centered text-center columns">
+                        <a href="" ng-click="saveTodos()" class="button success medium">Save</a>
+                    </div>
+                </div>
+                
+                <div class="item large-12 columns" ng-repeat="todo in todos | orderBy: 'completed'" ng-init="todo.completed = false">
+                   
                     <div class="large-9 columns">
-                        <label ng-hide="editing">Sample Todo</label>
+                        <input type="checkbox"/>
+                        <label ng-hide="editing">{{ todo.name }}</label>
                         <input ng-change="todo.edited = true" ng-blur="editing = false;" ng-show="editing" ng-model="todo.name" type="text">
                     </div>
+                    
                     <div class="actions large-3 columns">
                         <a href="#" ng-click="deleteToDO(todo,$index)">Delete</a>
                     </div><!--- .actions --->
 
                 </div><!---item--->
-                <div class="small-6 small-centered text-center columns">
-                    <a href="" ng-click="saveTodos()" class="button success large">Save All ToDo's</a>
-                </div>
+                
             </section>
             
         </div>

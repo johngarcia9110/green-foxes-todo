@@ -1,8 +1,9 @@
 require('angular')
 
 var MainController = require('./controllers/MainController')
+DataService = require('./services/data')
 
+angular.module('app', [])
 
-var app = angular.module('app', [])
-
-app.controller('MainController', ['$scope', '$http', MainController])
+.controller('MainController', ['$scope', 'DataService', MainController])
+.service('DataService', ['$http', DataService])

@@ -2,23 +2,41 @@
 require('angular')
 
 var MainController = require('./controllers/MainController')
+DataService = require('./services/data')
 
+angular.module('app', [])
 
-var app = angular.module('app', [])
-
-app.controller('MainController', ['$scope', '$http', MainController])
-
-},{"./controllers/MainController":2,"angular":4}],2:[function(require,module,exports){
-module.exports = function($scope, $http){
+.controller('MainController', ['$scope', 'DataService', MainController])
+.service('DataService', ['$http', DataService])
+},{"./controllers/MainController":2,"./services/data":3,"angular":5}],2:[function(require,module,exports){
+module.exports = function($scope, DataService){
     $scope.message = 'Angular is working!'
     
-    $scope.saveTodos = function(task){
-        
-        $http.post('/api/tasks', task ).then()
-            
+    DataService.getTodos(function(response){
+        console.log(response.data);
+        $scope.todos = response.data;
+    })
+    
+    $scope.saveTodos = function(){
+        var filteredTodos = $scope.todos.filter(function(todo){
+            if(todo.edited){
+                return todo;
+            }
+        })
+        DataService.saveTodos(filteredTodos);
     }
 }
 },{}],3:[function(require,module,exports){
+module.exports = function($http){
+    this.getTodos = function(callback){
+        $http.get('./mock/todos.json')
+        .then(callback)
+    }
+    this.saveTodos = function(todos){
+        console.log(todos.length + 'have been saved.')
+    }
+}
+},{}],4:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.7
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -31492,8 +31510,8 @@ $provide.value("$locale", {
 })(window);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],4:[function(require,module,exports){
+},{}],5:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":3}]},{},[1]);
+},{"./angular":4}]},{},[1]);
