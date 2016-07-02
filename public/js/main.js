@@ -6,16 +6,34 @@ DataService = require('./services/data')
 
 angular.module('app', [])
 
-.controller('MainController', ['$scope', 'DataService', MainController])
+.controller('MainController', ['$scope', '$http', 'DataService', MainController])
 .service('DataService', ['$http', DataService])
 },{"./controllers/MainController":2,"./services/data":3,"angular":5}],2:[function(require,module,exports){
-module.exports = function($scope, DataService){
-    $scope.message = 'Angular is working!'
+module.exports = function($scope, $http, DataService){
+    $scope.newTodo = { title : '', description : ''};
+    $scope.addNewTodo = function(){
+        var config = {
+            method: 'POST',
+            url : 'http://104.236.68.81/api/tasks',
+            data : {
+                'title' : $scope.todo.title,
+                'description' : $scope.todo.description
+            }
+        }
+        var request = $http(config);
+        request.then(function (response){
+            console.log(response.data);
+        },function(error){
+            console.log(error.data);
+        })
+    }
     
     DataService.getTodos(function(response){
         console.log(response.data);
         $scope.todos = response.data;
     })
+    //DataService.addTodo();
+    
     
     $scope.saveTodos = function(){
         var filteredTodos = $scope.todos.filter(function(todo){
@@ -27,14 +45,21 @@ module.exports = function($scope, DataService){
     }
 }
 },{}],3:[function(require,module,exports){
-module.exports = function($http){
+module.exports = function($http, $scope){
+   
     this.getTodos = function(callback){
-        $http.get('./mock/todos.json')
+        $http.get('http://104.236.68.81/api/tasks')
         .then(callback)
     }
-    this.saveTodos = function(todos){
-        console.log(todos.length + 'have been saved.')
-    }
+    
+    
+//    this.addTodos = function(todo){
+//        
+//        $http.post('http://104.236.68.81/api/tasks', todo)
+//        
+//        
+//        .then(console.log(todo.length + 'have been saved.'))
+//    }
 }
 },{}],4:[function(require,module,exports){
 /**

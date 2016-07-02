@@ -5,5 +5,5 @@ DataService = require('./services/data')
 
 angular.module('app', [])
 
-.controller('MainController', ['$scope', 'DataService', MainController])
+.controller('MainController', ['$scope', '$http', 'DataService', MainController])
 .service('DataService', ['$http', DataService])
