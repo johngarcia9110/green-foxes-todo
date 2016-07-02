@@ -1,2 +1,66 @@
 h1 {
   color: #bada55; }
+
+  .button-delete {
+    display: inline-block;
+    text-align: center;
+    line-height: 1;
+    cursor: pointer;
+    -webkit-appearance: none;
+    -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+            transition: background-color 0.25s ease-out, color 0.25s ease-out;
+    vertical-align: middle;
+    border: 1px solid transparent;
+    border-radius: 0;
+    padding: 0.85em 1em;
+    margin: 0 0 1rem 0;
+    font-size: 0.9rem;
+    /*background-color: #c0392b;*/
+    background-color: #c0392b;
+    background-image: url(../imgs/delete.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    color: #fefefe; }
+
+    .button-submit {
+      display: inline-block;
+      text-align: center;
+      line-height: 1;
+      cursor: pointer;
+      -webkit-appearance: none;
+      -webkit-transition: background-color 0.25s ease-out, color 0.25s ease-out;
+              transition: background-color 0.25s ease-out, color 0.25s ease-out;
+      vertical-align: middle;
+      border: 1px solid transparent;
+      border-radius: 0;
+      padding: 0.85em 1em;
+      margin: 0 0 1rem 0;
+      font-size: 0.9rem;
+      background-color: #27ae60;
+      background-image: url(../imgs/complete.png);
+      background-position: center;
+      background-repeat: no-repeat;
+      color: #fefefe; }
+
+      .add-button {
+        display:block;
+        width:50px;
+        height:50px;
+        line-height:50px;
+        border-radius: 50%;
+        color:#f5f5f5;
+        text-align:center;
+        text-decoration:none;
+        background-color: #2864CB;
+        background-image: url(../imgs/add.png);
+        background-position: center;
+        background-repeat: no-repeat;
+        box-shadow: 0 0 3px gray;
+        font-size:20px;
+        font-weight:bold;}
+
+      .add {
+        float: right;
+        margin-right: 25px;
+        margin-bottom: 20px
+      }
