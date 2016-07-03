@@ -1,4 +1,5 @@
 var gulp = require('gulp')
+var gutil = require('gulp-util')
 var sass = require('gulp-ruby-sass')
 var connect = require('gulp-connect')
 
@@ -17,10 +18,12 @@ gulp.task('connect', function () {
 
 gulp.task('browserify', function(){
     return browserify('./app/app.js')
-    
     .bundle()
+		.on('error', function(e) {
+			gutil.log(e);
+		})
     .pipe(source('main.js'))
-    
+
     .pipe(gulp.dest('./public/js/'));
 })
 
@@ -40,6 +43,3 @@ gulp.task('watch', function(){
 })
 
 gulp.task('default', ['connect', 'watch'])
-
-
-
