@@ -1,18 +1,5 @@
 <link rel="stylesheet" href="/css/foundation.css"/>
 <link rel="stylesheet" href="/css/style.css">
-<<<<<<< Updated upstream
-<div class="item large-12 columns" ng-repeat="todo in todos | orderBy: 'completed'" ng-init="todo.completed = false; editing = false">
-    <div class="input-group">
-      <div class="input-group-button">
-        <input type="submit" class="button-submit" value="">
-      </div>
-        <label ng-hide="editing" ng-click="editing = true">{{ todo.title }}</label>
-        <input class="input-group-field" ng-change="todo.edited = true" ng-blur="editing = false;" ng-model="todo.name" placeholder="Some other bullshit" ng-hide="!editing" type="text">
-      <div class="input-group-button">
-        <input ng-click="deleteToDO(todo,$index)" type="submit" class="button-delete" value="">
-      </div>
-    </div>
-=======
 <div class="item large-12 columns" ng-repeat="todo in todos">
 <div class="input-group">
   <div class="input-group-button">
@@ -28,5 +15,4 @@
     <button id="button-delete"></button>
   </div>
 </div>
->>>>>>> Stashed changes
 </div>

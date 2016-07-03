@@ -9,7 +9,6 @@ angular.module('app', [])
 .controller('MainController', ['$scope', 'DataService', MainController])
 .service('DataService', ['$http', DataService])
 },{"./controllers/MainController":2,"./services/data":3,"angular":5}],2:[function(require,module,exports){
-<<<<<<< Updated upstream
 module.exports = function($scope, DataService){
 //    $scope.newTodo = JSON.stringify{ title : '', description : ''};
 //    $scope.addNewTodo = function(){
@@ -28,28 +27,7 @@ module.exports = function($scope, DataService){
 //            console.log(error.data);
 //        })
 //    }
-    
-=======
-module.exports = function($scope, $http, DataService){
-    // $scope.newTodo = JSON.stringify{ title : '', description : ''};
-    $scope.addNewTodo = function(){
-        var config = {
-            method: 'POST',
-            url : 'http://104.236.68.81/api/tasks',
-            data : {
-                'title' : $scope.todo.title,
-                'description' : $scope.todo.description
-            }
-        }
-        var request = $http(config);
-        request.then(function (response){
-            console.log(response.data);
-        },function(error){
-            console.log(error.data);
-        })
-    }
 
->>>>>>> Stashed changes
     DataService.getTodos(function(response){
         console.log(response.data);
         $scope.todos = response.data;
@@ -57,15 +35,6 @@ module.exports = function($scope, $http, DataService){
     //DataService.addTodo();
     $scope.completeTodo = function(index){
       console.log(index);
-    }
-
-    $scope.saveTodos = function(){
-        var filteredTodos = $scope.todos.filter(function(todo){
-            if(todo.edited){
-                return todo;
-            }
-        })
-        DataService.saveTodos(filteredTodos);
     }
 }
 
