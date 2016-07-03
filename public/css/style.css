@@ -57,11 +57,7 @@ h1 {
       .add {
         float: right;
         margin-right: 25px;
-        margin-bottom: 20px
-<<<<<<< Updated upstream
-      }
-=======
-      }
+        margin-bottom: 20px;}
 
 @-webkit-keyframes check {
   0% {
@@ -184,4 +180,3 @@ h1 {
   -o-animation: none;
   animation: none;
 }
->>>>>>> Stashed changes
