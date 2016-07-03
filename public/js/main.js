@@ -6,27 +6,27 @@ DataService = require('./services/data')
 
 angular.module('app', [])
 
-.controller('MainController', ['$scope', '$http', 'DataService', MainController])
+.controller('MainController', ['$scope', 'DataService', MainController])
 .service('DataService', ['$http', DataService])
 },{"./controllers/MainController":2,"./services/data":3,"angular":5}],2:[function(require,module,exports){
-module.exports = function($scope, $http, DataService){
-    $scope.newTodo = { title : '', description : ''};
-    $scope.addNewTodo = function(){
-        var config = {
-            method: 'POST',
-            url : 'http://104.236.68.81/api/tasks',
-            data : {
-                'title' : $scope.todo.title,
-                'description' : $scope.todo.description
-            }
-        }
-        var request = $http(config);
-        request.then(function (response){
-            console.log(response.data);
-        },function(error){
-            console.log(error.data);
-        })
-    }
+module.exports = function($scope, DataService){
+//    $scope.newTodo = JSON.stringify{ title : '', description : ''};
+//    $scope.addNewTodo = function(){
+//        var config = {
+//            method: 'POST',
+//            url : 'http://104.236.68.81/api/tasks',
+//            data : {
+//                'title' : $scope.todo.title,
+//                'description' : $scope.todo.description
+//            }
+//        }
+//        var request = $http(config);
+//        request.then(function (response){
+//            console.log(response.data);
+//        },function(error){
+//            console.log(error.data);
+//        })
+//    }
     
     DataService.getTodos(function(response){
         console.log(response.data);
