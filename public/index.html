@@ -14,8 +14,52 @@
             <section class="row">
                 <h1>User's TO-DO List:</h1>
                     <div class="add">
-                      <a href="#" class="add-button"></a>
+                      <a href="#" data-reveal-id="newTodoModal" class="add-button"></a>
                     </div>
+                    
+                    <!-- popup for new todo creation -->
+                    
+                    <div id="newTodoModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                     
+                      <h2 id="modalTitle">Create New Todo</h2>
+                        
+                         <div class="row">
+                          <div class="large-4">
+                              <label>ToDo Name:
+                                  <input type="text">
+                              </label>                          
+                          </div>
+                        </div>
+                        
+                        <div class="row">
+                          <div class="large-6">
+                              <label>Todo Description:
+                                  <input type="text">
+                              </label>                              
+                          </div>
+                        </div> 
+                        
+                        <div class="row">
+                            <div class="large-12 columns">
+                              <label>Select Box
+                                <select>
+                                  <option value="husker">Husker</option>
+                                  <option value="starbuck">Starbuck</option>
+                                  <option value="hotdog">Hot Dog</option>
+                                  <option value="apollo">Apollo</option>
+                                </select>
+                              </label>
+                            </div>
+                        </div>                      
+
+                      
+                      
+                      
+                      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                    </div>
+                    
+                    <!-- end new todo creation popup -->
+                    
                     <div ng-include="'list.html'"></div>
                     <div class="small-centered text-center columns">
                     </div>
@@ -24,5 +68,13 @@
                     </div> -->
             </section>
         </div>
+        
+        <!--- scripts -->
+        <script src="js/jquery.js"></script>
+        <script src="js/foundation.min.js"></script>
+        <script src="js/foundation.core.js"></script>
+        <script src="js/what-input.js"></script>
+        <script src="js/foundation.reveal.js"></script>
+        
     </body>
 </html>
