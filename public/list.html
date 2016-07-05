@@ -8,9 +8,9 @@
         <label for="{{$index}}"></label>
       </div>
   </div>
-  <input class="input-group-field" ng-change="todo.edited = true"
+  <input id="input-group-field" ng-change="todo.edited = true"
   ng-blur="editing = false;" ng-model="todo.title" placeholder="Some other bullshit" type="text"
-  ng-style="todo.completed ? {'text-decoration':'line-through', 'color': '#D2D2D2'} : {'text-decoration':'none'}">
+  ng-style="getStyle(todo)">
   <div id="input-group-button" class="input-group-button">
     <button id="button-delete"></button>
   </div>
