@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<<<<<<< HEAD
 <html lang="en" ng-app="app">
 
 <head>
@@ -31,6 +32,72 @@
                     <div class="large-12 columns">
                         <label>Todo Description:
                             <input type="text"> </label>
+=======
+  <html lang="en" ng-app="app">
+        <head>
+            <meta charset="UTF-8">
+            <title>My App</title>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+            <link rel="stylesheet" href="/css/foundation.css"/>
+            <link rel="stylesheet" href="/css/style.css">
+            <link href="http://cdnjs.cloudflare.com/ajax/libs/foundicons/3.0.0/foundation-icons.css" rel="stylesheet">
+            <script src="/js/main.js"></script>
+        </head>
+    <body>
+        <header ng-include="'header.html'"></header>
+        <div ng-controller="MainController">
+            <section class="row">
+                <h1>User's TO-DO List:</h1>
+                    <div class="add">
+                      <a href="#" data-reveal-id="newTodoModal" class="add-button"></a>
+                    </div>
+
+                    <!-- popup for new todo creation -->
+
+                    <div id="newTodoModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+
+                      <h2 id="modalTitle">Create New Todo</h2>
+
+                         <div class="row">
+                          <div class="large-4">
+                              <label>ToDo Name:
+                                  <input type="text">
+                              </label>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                          <div class="large-6">
+                              <label>Todo Description:
+                                  <input type="text">
+                              </label>
+                          </div>
+                        </div>
+
+                        <div class="row">
+                            <div class="large-12 columns">
+                              <label>Select Box
+                                <select>
+                                  <option value="husker">Husker</option>
+                                  <option value="starbuck">Starbuck</option>
+                                  <option value="hotdog">Hot Dog</option>
+                                  <option value="apollo">Apollo</option>
+                                </select>
+                              </label>
+                            </div>
+                        </div>
+
+
+
+
+                      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                    </div>
+
+                    <!-- end new todo creation popup -->
+
+                    <div ng-include="'list.html'"></div>
+                    <div class="small-centered text-center columns">
+>>>>>>> 9b9559c41a30f80467178512e2a615d1e8627673
                     </div>
                 </div>
                 <div class="row">
@@ -77,6 +144,7 @@
                     <ul>
             </div>
         </div>
+<<<<<<< HEAD
     </footer>
     <!--- scripts -->
     <script src="js/foundation/vendor/jquery.js"></script>
@@ -95,3 +163,34 @@
 </body>
 
 </html>
+=======
+
+        <!-- Footer -->
+        <footer class="footer">
+          <div class="row full-width">
+            <div class="small-12 medium-3 large-4 columns">
+              <i class="fi-laptop"></i>
+              <p>Project #1: To Do List<br>Team Green Foxes</p>
+            </div>
+            <div class="small-12 medium-3 large-4 columns">
+              <i class="fi-html5"></i>
+              <p>Using AngularJs/Foundation for the Front, C# .Core for the Back and PostgreSQL for DataBase</p>
+            </div>
+            <div class="small-6 medium-3 large-2 columns">
+              <i class="fi-social-reddit"></i>
+              <ul class="footer-links">
+                <li><a href="http://WeeklyDev.io" target="_blank">WeeklyDev.io</a></li>
+              <ul>
+            </div>
+            <div class="small-6 medium-3 large-2 columns">
+              <i class="fi-social-github"></i>
+              <ul class="footer-links">
+                <li><a href="https://github.com/johngarcia9110/green-foxes-todo" target="_blank">GitHub (FrontEnd)</a></li>
+                <li><a href="https://github.com/jm96441n/green_foxes_backend" target="_blank">GitHub (BackEnd)</a></li>
+              <ul>
+            </div>
+          </div>
+        </footer>
+            </body>
+        </html>
+>>>>>>> 9b9559c41a30f80467178512e2a615d1e8627673

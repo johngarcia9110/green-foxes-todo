@@ -1,0 +1,32 @@
+﻿Merge branch 'master' of https://github.com/johngarcia9110/green-foxes-todo
+
+# Conflicts:
+#	app/controllers/MainController.js
+#	public/css/style.css
+#	public/index.html
+#	public/js/main.js
+#	public/list.html
+#
+# It looks like you may be committing a merge.
+# If this is not correct, please remove the file
+#	.git/MERGE_HEAD
+# and try again.
+
+
+# Please enter the commit message for your changes. Lines starting
+# with '#' will be ignored, and an empty message aborts the commit.
+# On branch master
+# Your branch and 'origin/master' have diverged,
+# and have 5 and 2 different commits each, respectively.
+#   (use "git pull" to merge the remote branch into yours)
+#
+# All conflicts fixed but you are still merging.
+#
+# Changes to be committed:
+#	modified:   app/controllers/MainController.js
+#	modified:   public/css/style.css
+#	modified:   public/index.html
+#	modified:   public/js/main.js
+#	modified:   public/list.html
+#
+
