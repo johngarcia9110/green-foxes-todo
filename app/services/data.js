@@ -5,9 +5,6 @@ module.exports = function($http, $scope){
         .then(callback)
     }
     
-//    this.deleteTodo = function(todo){
-//        $http.delete('http://104.236.68.81/api/tasks/' + todo);
-//    }
     
 //    this.addTodos = function(todo){
 //        
