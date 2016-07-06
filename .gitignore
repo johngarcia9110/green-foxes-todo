@@ -1,3 +1,5 @@
 node_modules/*
 
-public/js/foundation/*
+public/js/foundation/vendor/*
+
+public/js/foundation/foundation.reveal.js

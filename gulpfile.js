@@ -35,6 +35,14 @@ gulp.task('sass', function(){
 gulp.task('foundation', function(){
     gulp.src(['node_modules/foundation-sites/dist/foundation.css'])
     .pipe(gulp.dest('public/css/'))
+    gulp.src(['node_modules/foundation-sites/dist/foundation.js'])
+    .pipe(gulp.dest('public/js/foundation/vendor/'))
+    gulp.src(['node_modules/foundation-sites/vendor/jquery/dis/jquery.js'])
+    .pipe(gulp.dest('public/js/foundation/vendor/'))
+    gulp.src(['node_modules/foundation-sites/node_modules/what-input/what-input.js'])
+    .pipe(gulp.dest('public/js/foundation/vendor/'))
+    gulp.src(['node_modules/foundation-sites/dist/plugins/foundation.reveal.js'])
+    .pipe(gulp.dest('public/js/foundation/'))
 })
 
 gulp.task('watch', function(){
