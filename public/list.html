@@ -1,23 +1,7 @@
 <link rel="stylesheet" href="/css/foundation.css" />
 <link rel="stylesheet" href="/css/style.css">
 <div class="item large-12 columns" ng-repeat="todo in todos">
-<<<<<<< HEAD
-	<div class="input-group">
-		<div class="input-group-button">
-			<div class="checkbox">
-				<input type="checkbox" id="{{$index}}" ng-model="todo.completed" ng-click="completeTodo($index)" />
-				<label for="{{$index}}"></label>
-			</div>
-		</div>
-		<input id="input-group-field" ng-change="todo.edited = true"
-  ng-blur="editing = false;" ng-model="todo.title" placeholder="Some other bullshit" type="text"
-  ng-style="getStyle(todo)">
-		<div id="input-group-button" class="input-group-button">
-			<button id="button-delete" ng-click=""></button>
-		</div>
-	</div>
-</div>
-=======
+
 <div class="input-group">
   <div class="input-group-button">
       <div class="checkbox">
@@ -33,4 +17,4 @@
   </div>
 </div>
 </div>
->>>>>>> 9b9559c41a30f80467178512e2a615d1e8627673
+
