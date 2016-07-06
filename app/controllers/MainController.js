@@ -21,8 +21,14 @@ module.exports = function($scope, DataService){
         console.log(response.data);
         $scope.todos = response.data;
     })
-    //DataService.addTodo();
-    $scope.completeTodo = function(index){
-      console.log(index);
-    }
-}
+    
+//    DataService.deleteTodo(function(todo){
+//        
+//    })
+    
+    
+//    //DataService.addTodo();
+//    $scope.completeTodo = (function(index){
+//      console.log(index);
+//    })
+

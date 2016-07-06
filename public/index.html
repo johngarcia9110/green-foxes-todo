@@ -14,17 +14,17 @@
             <section class="row">
                 <h1>User's TO-DO List:</h1>
                     <div class="add">
-                      <a href="" data-reveal-id="newTodoModal" class="add-button"></a>
+                      <a href="" data-reveal-id="newTodoModal" id="todoModalBtn" class="add-button"></a>
                     </div>
                     
                     <!-- popup for new todo creation -->
-                    
-                    <div id="newTodoModal" class="reveal-modal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+                
+                    <div id="newTodoModal" class="reveal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
                      
                       <h2 id="modalTitle">Create New Todo</h2>
                         
                          <div class="row">
-                          <div class="large-4">
+                          <div class="large-12 columns">
                               <label>ToDo Name:
                                   <input type="text">
                               </label>                          
@@ -32,7 +32,7 @@
                         </div>
                         
                         <div class="row">
-                          <div class="large-6">
+                          <div class="large-12 columns">
                               <label>Todo Description:
                                   <input type="text">
                               </label>                              
@@ -41,12 +41,11 @@
                         
                         <div class="row">
                             <div class="large-12 columns">
-                              <label>Select Box
+                              <label>Select the level of importance:
                                 <select>
-                                  <option value="husker">Husker</option>
-                                  <option value="starbuck">Starbuck</option>
-                                  <option value="hotdog">Hot Dog</option>
-                                  <option value="apollo">Apollo</option>
+                                  <option value="0">Low</option>
+                                  <option value="1">Medium</option>
+                                  <option value="2">High</option>
                                 </select>
                               </label>
                             </div>
@@ -55,10 +54,15 @@
                       
                       
                       
-                      <a class="close-reveal-modal" aria-label="Close">&#215;</a>
+                      <button class="close-button" data-close aria-label="Close modal" type="button">
+    <span aria-hidden="true">&times;</span>
+  </button>
                     </div>
                     
                     <!-- end new todo creation popup -->
+                    
+
+                    
                     
                     <div ng-include="'list.html'"></div>
                     <div class="small-centered text-center columns">
@@ -75,6 +79,20 @@
         <script src="js/foundation/vendor/foundation.js"></script>
         <script src="js/foundation/app.js"></script>
         <script src="js/foundation/vendor/what-input.js"></script> 
-        <script src="js/foundation/foundation.reveal.js"></script>      
+        <script src="js/foundation/foundation.reveal.js"></script> 
+        
+                            <script type="text/javascript">
+                        $(document).ready(function(){
+                            $("#todoModalBtn").click(function (e) {
+                                var popup = new Foundation.Reveal($('#newTodoModal'));
+                                
+                                popup.open();
+                            });
+                            
+                        });
+                        
+                
+                
+                    </script>     
     </body>
 </html>
