@@ -56,8 +56,23 @@
                     </div> -->
 			</section>
 		</div>
+
+		<!--- scripts -->
+		<script src="js/foundation/vendor/jquery.js"></script>
+		<script src="js/foundation/vendor/foundation.js"></script>
+		<script src="js/foundation/app.js"></script>
+		<script src="js/foundation/vendor/what-input.js"></script>
+		<script src="js/foundation/foundation.reveal.js"></script>
+		<script type="text/javascript">
+			$(document).ready(function () {
+				$("#todoModalBtn").click(function (e) {
+					var popup = new Foundation.Reveal($('#newTodoModal'));
+					popup.open();
+				});
+			});
+		</script>
 		<!-- Footer -->
-		<footer class="footer">
+		<footer id="footer">
 			<div class="row full-width">
 				<div class="small-12 medium-3 large-4 columns"> <i class="fi-laptop"></i>
 					<p>Project #1: To Do List
@@ -79,19 +94,19 @@
 				</div>
 			</div>
 		</footer>
-		<!--- scripts -->
-		<script src="js/foundation/vendor/jquery.js"></script>
-		<script src="js/foundation/vendor/foundation.js"></script>
-		<script src="js/foundation/app.js"></script>
-		<script src="js/foundation/vendor/what-input.js"></script>
-		<script src="js/foundation/foundation.reveal.js"></script>
 		<script type="text/javascript">
-			$(document).ready(function () {
-				$("#todoModalBtn").click(function (e) {
-					var popup = new Foundation.Reveal($('#newTodoModal'));
-					popup.open();
-				});
-			});
+			$(window).bind("load", function () {
+		     var footer = $("#footer");
+		     var pos = footer.position();
+		     var height = $(window).height();
+		     height = height - pos.top;
+		     height = height - footer.height();
+		     if (height > 0) {
+		         footer.css({
+		             'margin-top': height + 'px'
+		         });
+		     }
+		 });
 		</script>
 	</body>
 
