@@ -45,7 +45,7 @@ module.exports = function($scope, DataService){
 			borderColor = '#FF7700'
 			break;
 		case 2:
-			borderColor = '#FF0000'
+			borderColor = '#e63d3d'
 	}
 		return {
 			 'text-decoration': textDecoration,
@@ -63,7 +63,6 @@ module.exports = function($scope, DataService){
 		  console.log(index);
 		}
 }
-
 
 },{}],3:[function(require,module,exports){
 module.exports = function($http, $scope){

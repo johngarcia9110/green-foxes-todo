@@ -191,7 +191,7 @@ h1 {
 }
 
 #footer {
-  margin-top: 50px;
+  margin-top: 15px;
   background-color: #2980b9;
   padding: 2rem 4rem;
   text-align: center;
@@ -199,6 +199,10 @@ h1 {
 }
 #footer i {
   font-size: 60px;
+}
+
+.menu-text i {
+  font-size: 20px;
 }
 
 #footer h4 {

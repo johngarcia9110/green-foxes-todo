@@ -11,10 +11,9 @@
   </div>
   <input id="input-group-field" ng-change="todo.edited = true"
   ng-blur="editing = false;" ng-model="todo.title" placeholder="Some other bullshit" type="text"
-  ng-style="getStyle(todo)">
+  ng-style="getStyle(todo)" data-tooltip aria-haspopup="true" class="has-tip-right" title="{{todo.description}}">
   <div id="input-group-button" class="input-group-button">
     <button id="button-delete"></button>
   </div>
 </div>
 </div>
-
