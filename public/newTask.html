@@ -1,0 +1,40 @@
+<div class="add">
+    <a href="" data-reveal-id="newTodoModal" id="todoModalBtn" class="add-button"></a>
+</div>
+<div id="newTodoModal" class="reveal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
+    <h2 id="modalTitle">Create New Todo</h2>
+    <div class="row">
+        <div class="large-12 columns">
+            <label><b>Task</b>
+                <input type="text"> </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <label><b>Description</b>
+                <input type="text">
+            </label>
+        </div>
+    </div>
+    <div class="row">
+        <div class="large-12 columns">
+            <label><b>Level of priority</b>
+                <select>
+                    <option value="0">Low</option>
+                    <option value="1">Medium</option>
+                    <option value="2">High</option>
+                </select>
+            </label>
+        </div>
+    </div>
+    <div class="row"> <a href="#" data-close aria-label="Close modal" class="button success">Add</a> </div>
+    <button class="close-button" data-close aria-label="Close modal" type="button"> <span aria-hidden="true">&times;</span> </button>
+</div>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $("#todoModalBtn").click(function(e) {
+            var popup = new Foundation.Reveal($('#newTodoModal'));
+            popup.open();
+        });
+    });
+</script>
