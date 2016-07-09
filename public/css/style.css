@@ -1,9 +1,16 @@
 h1 {
-  color: #bada55; }
-  .input-group {
+    color: #bada55;
+}
+.input-group {
     margin: 0 auto;
-  }
-  .input-group #input-group-button #button-delete {
+}
+#wrapper {
+    display: flex;
+    /* use the flex model */
+    min-height: 100%;
+    flex-direction: column;
+}
+.input-group #input-group-button #button-delete {
     display: inline-block;
     padding: 6px 12px;
     margin-bottom: 18px;
@@ -30,204 +37,197 @@ h1 {
     border-radius: 4px;
     color: #fff;
     background-color: #d9534f;
-    border-color: #d43f3a;}
-
-  .input-group #input-group-button #button-delete:hover {
+    border-color: #d43f3a;
+}
+.input-group #input-group-button #button-delete:hover {
     background-color: #c9302c;
     border-color: #ac2925;
-  }
-
-.input-group #input-group-field {
-  border-radius: 5px 12px;
-  border-width: 4px;
-  border-style: solid;
 }
-      .add-button {
-        display:block;
-        width:50px;
-        height:50px;
-        line-height:50px;
-        border-radius: 50%;
-        color:#f5f5f5;
-        text-align:center;
-        text-decoration:none;
-        background-color: #2864CB;
-        background-image: url(../imgs/add.png);
-        background-position: center;
-        background-repeat: no-repeat;
-        box-shadow: 0 0 3px gray;
-        font-size:20px;
-        font-weight:bold;}
-
-      .add {
-        float: right;
-        margin-right: 25px;
-        margin-bottom: 20px;}
-
+.input-group #input-group-field {
+    border-radius: 5px 12px;
+    border-width: 4px;
+    border-style: solid;
+}
+.add-button {
+    display: block;
+    width: 50px;
+    height: 50px;
+    line-height: 50px;
+    border-radius: 50%;
+    color: #f5f5f5;
+    text-align: center;
+    text-decoration: none;
+    background-color: #2864CB;
+    background-image: url(../imgs/add.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    box-shadow: 0 0 3px gray;
+    font-size: 20px;
+    font-weight: bold;
+}
+.add {
+    float: right;
+    margin-right: 25px;
+    margin-bottom: 20px;
+}
 @-webkit-keyframes check {
-  0% {
-    height: 0;
-    width: 0;
-  }
-  25% {
-    height: 0;
-    width: 10px;
-  }
-  50% {
-    height: 20px;
-    width: 10px;
-  }
+    0% {
+        height: 0;
+        width: 0;
+    }
+    25% {
+        height: 0;
+        width: 10px;
+    }
+    50% {
+        height: 20px;
+        width: 10px;
+    }
 }
 @-moz-keyframes check {
-  0% {
-    height: 0;
-    width: 0;
-  }
-  25% {
-    height: 0;
-    width: 10px;
-  }
-  50% {
-    height: 20px;
-    width: 10px;
-  }
+    0% {
+        height: 0;
+        width: 0;
+    }
+    25% {
+        height: 0;
+        width: 10px;
+    }
+    50% {
+        height: 20px;
+        width: 10px;
+    }
 }
 @-ms-keyframes check {
-  0% {
-    height: 0;
-    width: 0;
-  }
-  25% {
-    height: 0;
-    width: 10px;
-  }
-  50% {
-    height: 20px;
-    width: 10px;
-  }
+    0% {
+        height: 0;
+        width: 0;
+    }
+    25% {
+        height: 0;
+        width: 10px;
+    }
+    50% {
+        height: 20px;
+        width: 10px;
+    }
 }
 @keyframes check {
-  0% {
-    height: 0;
-    width: 0;
-  }
-  25% {
-    height: 0;
-    width: 10px;
-  }
-  50% {
-    height: 20px;
-    width: 10px;
-  }
+    0% {
+        height: 0;
+        width: 0;
+    }
+    25% {
+        height: 0;
+        width: 10px;
+    }
+    50% {
+        height: 20px;
+        width: 10px;
+    }
 }
-
 .checkbox, .checkbox-alt {
-  background-color: #fff;
-  display: inline-block;
-  height: 30px;
-  width: 30px;
-  margin-right: 12px;
-  margin-bottom: 20px;
+    background-color: #fff;
+    display: inline-block;
+    height: 30px;
+    width: 30px;
+    margin-right: 12px;
+    margin-bottom: 20px;
 }
 .checkbox label, .checkbox-alt label {
-  display: block;
-  height: 30px;
-  position: relative;
-  width: 30px;
+    display: block;
+    height: 30px;
+    position: relative;
+    width: 30px;
 }
 .checkbox label:after, .checkbox-alt label:after {
-  /*
+    /*
   This element has a border on the right, and top. By rotating it looks like a check symbol, but the wrong way. That's why I'm flipping it with scaleX(-1)
   */
-  -moz-transform: scaleX(-1) rotate(135deg);
-  -ms-transform: scaleX(-1) rotate(135deg);
-  -webkit-transform: scaleX(-1) rotate(135deg);
-  transform: scaleX(-1) rotate(135deg);
-  /*
+    -moz-transform: scaleX(-1) rotate(135deg);
+    -ms-transform: scaleX(-1) rotate(135deg);
+    -webkit-transform: scaleX(-1) rotate(135deg);
+    transform: scaleX(-1) rotate(135deg);
+    /*
   I want to position the symbol using the left top, because when increasing the width and height of an object, it expands from the top left corner as well. That is what makes it looks like it's being drawn.
   */
-  -moz-transform-origin: left top;
-  -ms-transform-origin: left top;
-  -webkit-transform-origin: left top;
-  transform-origin: left top;
-  border-right: 4px solid #CDEECF;
-  border-top: 4px solid #CDEECF;
-  content: '';
-  display: block;
-  height: 20px;
-  left: 0px;
-  position: absolute;
-  top: 23px;
-  width: 10px;
+    -moz-transform-origin: left top;
+    -ms-transform-origin: left top;
+    -webkit-transform-origin: left top;
+    transform-origin: left top;
+    border-right: 4px solid #CDEECF;
+    border-top: 4px solid #CDEECF;
+    content: '';
+    display: block;
+    height: 20px;
+    left: 0px;
+    position: absolute;
+    top: 23px;
+    width: 10px;
 }
 .checkbox label:hover:after, .checkbox-alt label:hover:after {
-  border-color: #C0EBC3;
+    border-color: #C0EBC3;
 }
 .checkbox input, .checkbox-alt input {
-  display: none;
+    display: none;
 }
-.checkbox input:checked + label:after, .checkbox-alt input:checked + label:after {
-  -webkit-animation: check 0.8s;
-  -moz-animation: check 0.8s;
-  -o-animation: check 0.8s;
-  animation: check 0.8s;
-  border-color: #18BC1D;
+.checkbox input:checked+ label:after, .checkbox-alt input:checked+ label:after {
+    -webkit-animation: check 0.8s;
+    -moz-animation: check 0.8s;
+    -o-animation: check 0.8s;
+    animation: check 0.8s;
+    border-color: #18BC1D;
 }
 .checkbox.checkbox-alt label:hover:after, .checkbox-alt.checkbox-alt label:hover:after {
-  -webkit-animation: check 0.8s ease infinite;
-  -moz-animation: check 0.8s ease infinite;
-  -o-animation: check 0.8s ease infinite;
-  animation: check 0.8s ease infinite;
+    -webkit-animation: check 0.8s ease infinite;
+    -moz-animation: check 0.8s ease infinite;
+    -o-animation: check 0.8s ease infinite;
+    animation: check 0.8s ease infinite;
 }
-.checkbox.checkbox-alt input:checked + label:after, .checkbox-alt.checkbox-alt input:checked + label:after {
-  -webkit-animation: none;
-  -moz-animation: none;
-  -o-animation: none;
-  animation: none;
+.checkbox.checkbox-alt input:checked+ label:after, .checkbox-alt.checkbox-alt input:checked+ label:after {
+    -webkit-animation: none;
+    -moz-animation: none;
+    -o-animation: none;
+    animation: none;
 }
-
 .full-width {
-  max-width: 1400px;
+    max-width: 1400px;
 }
-
 #footer {
-  margin-top: 15px;
-  background-color: #2980b9;
-  padding: 2rem 4rem;
-  text-align: center;
-  color: #fff;
+    margin-top: 30px;
+    background-color: #2980b9;
+    padding: 2rem 4rem;
+    text-align: center;
+    color: #fff;
 }
 #footer i {
-  font-size: 60px;
+    font-size: 60px;
 }
-
 .menu-text i {
-  font-size: 20px;
+    font-size: 20px;
 }
-
 #footer h4 {
-  color: #fff;
-  font-size: 1em;
-  font-weight: 400;
-  text-transform: uppercase;
-  margin-top: 2.5rem;
-  margin-bottom: 10px;
+    color: #fff;
+    font-size: 1em;
+    font-weight: 400;
+    text-transform: uppercase;
+    margin-top: 2.5rem;
+    margin-bottom: 10px;
 }
 #footer p, #footer a {
-  font-weight: 300;
-  font-size: .8em;
-  color: #fff;
+    font-weight: 300;
+    font-size: .8em;
+    color: #fff;
 }
-
 @media only screen and (min-width: 40.063em) {
-  #footer .columns:nth-child(n+2) {
-    border-left: 1px solid #b3b3b3;
-    min-height: 40px;
-  }
+    #footer .columns:nth-child(n+2) {
+        border-left: 1px solid #b3b3b3;
+        min-height: 40px;
+    }
 }
 .footer-links {
-  list-style-type: none;
+    list-style-type: none;
 }
 .footer-links li {
-  margin-top: .5em;
+    margin-top: .5em;
 }
