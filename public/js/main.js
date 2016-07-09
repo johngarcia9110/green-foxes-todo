@@ -2,31 +2,34 @@
 require('angular')
 
 var MainController = require('./controllers/MainController')
+var SecondController = require('./controllers/SecondController')
 DataService = require('./services/data')
 
 angular.module('app', [])
 
 .controller('MainController', ['$scope', 'DataService', MainController])
+.controller('SecondController', ['$scope', '$http', SecondController])
 .service('DataService', ['$http', DataService])
-},{"./controllers/MainController":2,"./services/data":3,"angular":5}],2:[function(require,module,exports){
+
+},{"./controllers/MainController":2,"./controllers/SecondController":3,"./services/data":4,"angular":6}],2:[function(require,module,exports){
 module.exports = function($scope, DataService) {
-    //    $scope.newTodo = JSON.stringify{ title : '', description : ''};
-    //    $scope.addNewTodo = function(){
-    //        var config = {
-    //            method: 'POST',
-    //            url : 'http://104.236.68.81/api/tasks',
-    //            data : {
-    //                'title' : $scope.todo.title,
-    //                'description' : $scope.todo.description
-    //            }
-    //        }
-    //        var request = $http(config);
-    //        request.then(function (response){
-    //            console.log(response.data);
-    //        },function(error){
-    //            console.log(error.data);
-    //        })
-    //    }
+
+  DataService.getTodos(function(response) {
+      console.log(response.data);
+      $scope.todos = response.data;
+  }),
+
+    $scope.editTask = function(todo) {
+        DataService.editTask(todo);
+    },
+
+    $scope.deleteTask = function(todo) {
+        DataService.deleteTask(todo);
+    },
+
+    $scope.addTask = function(todo) {
+        DataService.addTask(todo);
+    },
 
     $scope.getStyle = function(todo) {
         if (todo.completed) {
@@ -52,36 +55,88 @@ module.exports = function($scope, DataService) {
             'color': color,
             'border-color': borderColor
         }
-    };
-
-    DataService.getTodos(function(response) {
-            console.log(response.data);
-            $scope.todos = response.data;
-        })
-        //DataService.addTodo();
-    $scope.completeTodo = function(index) {
-        console.log(index);
     }
 }
 
 },{}],3:[function(require,module,exports){
-module.exports = function($http, $scope){
-   
-    this.getTodos = function(callback){
-        $http.get('http://104.236.68.81/api/tasks')
-        .then(callback)
+module.exports = function($scope, $http) {
+    $scope.addTask = function(newTodo) {
+        var config = {
+            headers: {
+                'Content-Type': 'application/json',
+                'Access-Control-Allow-Origin': 'http://localhost:9000'
+            }
+        }
+        newTodo.completed = false;
+        newTodo.priority = parseInt(newTodo.priority);
+        console.log(newTodo);
+
+        $http.post('http://104.236.68.81/api/tasks/', newTodo, config)
+            .success(function(data, status, headers, config) {
+                console.log('aiiigh')
+            })
+            .error(function(data, status, header, config) {
+                console.log('mierda')
+            });
     }
-    
-    
-//    this.addTodos = function(todo){
-//        
-//        $http.post('http://104.236.68.81/api/tasks', todo)
-//        
-//        
-//        .then(console.log(todo.length + 'have been saved.'))
-//    }
 }
+
 },{}],4:[function(require,module,exports){
+module.exports = function($http, $scope) {
+
+    this.getTodos = function(callback) {
+        $http.get('http://104.236.68.81/api/tasks')
+            .then(callback)
+    }
+
+    this.editTask = function(todo) {
+        var config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+            console.log(todo);
+        $http.put('http://104.236.68.81/api/tasks/' + todo.id, todo, config)
+            .success(function(data, status, headers, config) {
+                console.log('aiiigh')
+            })
+            .error(function(data, status, header, config) {
+                console.log('mierda')
+            });
+    }
+    this.deleteTask = function(todo) {
+        var config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+        $http.delete('http://104.236.68.81/api/tasks/' + todo.id, todo, config)
+            .success(function(data, status, headers, config) {
+                console.log('aiiigh')
+            })
+            .error(function(data, status, header, config) {
+                console.log('mierda')
+            });
+    },
+
+    this.addTask = function(todo) {
+        var config = {
+            headers: {
+                'Content-Type': 'application/json'
+            }
+        }
+
+        $http.post('http://104.236.68.81/api/tasks/', todo, config)
+            .success(function(data, status, headers, config) {
+                console.log('aiiigh')
+            })
+            .error(function(data, status, header, config) {
+                console.log('mierda')
+            });
+    }
+}
+
+},{}],5:[function(require,module,exports){
 /**
  * @license AngularJS v1.5.7
  * (c) 2010-2016 Google, Inc. http://angularjs.org
@@ -31555,8 +31610,8 @@ $provide.value("$locale", {
 })(window);
 
 !window.angular.$$csp().noInlineStyle && window.angular.element(document.head).prepend('<style type="text/css">@charset "UTF-8";[ng\\:cloak],[ng-cloak],[data-ng-cloak],[x-ng-cloak],.ng-cloak,.x-ng-cloak,.ng-hide:not(.ng-hide-animate){display:none !important;}ng\\:form{display:block;}.ng-animate-shim{visibility:hidden;}.ng-anchor{position:absolute;}</style>');
-},{}],5:[function(require,module,exports){
+},{}],6:[function(require,module,exports){
 require('./angular');
 module.exports = angular;
 
-},{"./angular":4}]},{},[1]);
+},{"./angular":5}]},{},[1]);
