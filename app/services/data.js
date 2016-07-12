@@ -11,13 +11,12 @@ module.exports = function($http, $scope) {
                 'Content-Type': 'application/json'
             }
         }
-            console.log(todo);
         $http.put('http://104.236.68.81/api/tasks/' + todo.id, todo, config)
             .success(function(data, status, headers, config) {
-                console.log('aiiigh')
+                console.log('success')
             })
             .error(function(data, status, header, config) {
-                console.log('mierda')
+                console.log('error')
             });
     }
     this.deleteTask = function(todo) {
@@ -28,10 +27,10 @@ module.exports = function($http, $scope) {
         }
         $http.delete('http://104.236.68.81/api/tasks/' + todo.id, todo, config)
             .success(function(data, status, headers, config) {
-                console.log('aiiigh')
+                console.log('success')
             })
             .error(function(data, status, header, config) {
-                console.log('mierda')
+                console.log('error')
             });
     },
 
@@ -41,13 +40,12 @@ module.exports = function($http, $scope) {
                 'Content-Type': 'application/json'
             }
         }
-
         $http.post('http://104.236.68.81/api/tasks/', todo, config)
             .success(function(data, status, headers, config) {
-                console.log('aiiigh')
+                console.log('success')
             })
             .error(function(data, status, header, config) {
-                console.log('mierda')
+                console.log('error')
             });
     }
 }

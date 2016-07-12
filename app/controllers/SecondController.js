@@ -8,14 +8,13 @@ module.exports = function($scope, $http) {
         }
         newTodo.completed = false;
         newTodo.priority = parseInt(newTodo.priority);
-        console.log(newTodo);
-
         $http.post('http://104.236.68.81/api/tasks/', newTodo, config)
             .success(function(data, status, headers, config) {
-                console.log('aiiigh')
+                console.log('success')
+                $scope.todos.push(newTodo);
             })
             .error(function(data, status, header, config) {
-                console.log('mierda')
+                console.log('error')
             });
     }
 }

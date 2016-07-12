@@ -8,7 +8,7 @@
         </div>
         <input type="text" id="input-group-field" data-ng-change="editTask(todo)" ng-model="todo.title" placeholder="Some other bullshit" ng-style="getStyle(todo)" data-tooltip aria-haspopup="true" class="has-tip-right" title="{{todo.description}}">
         <div id="input-group-button" class="input-group-button">
-            <button id="button-delete" ng-click="deleteTask(todo)"></button>
+            <button id="button-delete" ng-click="deleteTask(todo, $index)"></button>
         </div>
     </div>
 </div>

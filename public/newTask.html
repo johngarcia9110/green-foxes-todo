@@ -4,24 +4,25 @@
 <div ng-controller="SecondController">
     <div id="newTodoModal" class="reveal" data-reveal aria-labelledby="modalTitle" aria-hidden="true" role="dialog">
         <h2 id="modalTitle">Create New Todo</h2>
+        <ng-form name="exampleForm">
         <div class="row">
             <div class="large-12 columns">
                 <label><b>Task</b>
-                    <input type="text" ng-model="newTodo.title"> </label>
+                    <input type="text" ng-model="newTodo.title" ng-minlength="3" required> </label>
             </div>
         </div>
         <div class="row">
             <div class="large-12 columns">
                 <label><b>Description</b>
-                    <input type="text" ng-model="newTodo.description">
+                    <input type="text" ng-model="newTodo.description" ng-minlength="3" required>
                 </label>
             </div>
         </div>
         <div class="row">
             <div class="large-12 columns">
                 <label><b>Level of priority</b>
-                    <select ng-model="newTodo.priority">
-                        <option value=0 >Low</option>
+                    <select ng-model="newTodo.priority" required>
+                        <option value=0 selected>Low</option>
                         <option value=1>Medium</option>
                         <option value=2>High</option>
                     </select>
@@ -29,9 +30,10 @@
             </div>
         </div>
         <div class="large-3 small-12 columns expand">
-            <a href="#" class="button expand" ng-click="addTask(newTodo)" data-close aria-label="Close modal" ng-model="newTodo">Add</a>
+            <a href="#" ng-disabled="exampleForm.$invalid" class="button expand" ng-click="addTask(newTodo)" data-close aria-label="Close modal" ng-model="newTodo">Add</a>
         </div>
         <button class="close-button" data-close aria-label="Close modal" type="button"> <span aria-hidden="true">&times;</span> </button>
+        </ng-form>
     </div>
 </div>
 <script type="text/javascript">

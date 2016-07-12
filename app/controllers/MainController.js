@@ -9,8 +9,9 @@ module.exports = function($scope, DataService) {
         DataService.editTask(todo);
     },
 
-    $scope.deleteTask = function(todo) {
+    $scope.deleteTask = function(todo, index) {
         DataService.deleteTask(todo);
+        $scope.todos.splice(index,1);
     },
 
     $scope.addTask = function(todo) {

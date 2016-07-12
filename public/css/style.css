@@ -4,12 +4,13 @@ h1 {
 .input-group {
     margin: 0 auto;
 }
-#wrapper {
+.wrapper {
     display: flex;
     /* use the flex model */
     min-height: 100%;
     flex-direction: column;
 }
+
 .input-group #input-group-button #button-delete {
     display: inline-block;
     padding: 6px 12px;
