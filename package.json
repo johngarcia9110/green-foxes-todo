@@ -25,6 +25,7 @@
   },
   "dependencies": {
     "angular": "^1.5.7",
+    "express": "^4.14.0",
     "foundation-sites": "^6.2.3"
   }
 }
